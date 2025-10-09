@@ -1,0 +1,178 @@
+/* 全域樣式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "微軟正黑體", "Segoe UI", Arial, sans-serif;
+
+  /* ① 背景顏色 → 湖水綠＋天藍色調 */
+  background: linear-gradient(135deg, #b0c6e8 0%, #b0dce8 50%, #c8e8e2 100%);
+
+  padding: 20px;
+  line-height: 1.8;
+}
+
+/* 容器樣式 */
+.container {
+  /* 容器背景色 → 淺薄荷綠系 (#e6fffa) */
+  max-width: 900px; /* 原 800px → 客製化為 900px */
+  margin: 0 auto;
+  background-color: #e6fffa;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* 主標題 */
+h1 {
+  /* ② 主標題顏色 → 柔藍色系 #5b8fd1 */
+  color: #5b8fd1;
+  text-align: center;
+  font-size: 3em; /* 3em */
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 4px solid #5b8fd1;
+}
+
+/* 區段樣式 */
+.section {
+  margin: 30px 0;
+  padding: 20px;
+
+  /* ③ 區塊背景色 → 淡紫灰 #e7e6ff */
+  background-color: #e7e6ff;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover {
+  /* 懸浮移動距離 → -8px */
+  transform: translateY(-8px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* 副標題 */
+h2 {
+  /* 使用與主標題呼應的藍綠色調 */
+  color: #5b8fd1;
+  font-size: 2em; /* 2em */
+  margin-bottom: 15px;
+  padding-left: 15px;
+  border-left: 5px solid #5b8fd1;
+}
+
+/* 段落 */
+p {
+  color: #444;
+  margin: 10px 0;
+  padding-left: 15px;
+}
+
+strong {
+  color: #5b8fd1;
+  font-size: 1.1em;
+}
+
+/* 列表樣式 */
+ul {
+  list-style: none;
+  padding-left: 15px;
+}
+
+li {
+  color: #444;
+  margin: 10px 0;
+  padding-left: 30px;
+  position: relative;
+}
+
+/* 修改列表符號 → "★" */
+li::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  color: #b0c6e8;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* 表格樣式 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+th {
+  /* ⑤ 表格標題底色 → 湖水藍 #b0dce8 */
+  background-color: #b0dce8;
+  color: #333;
+  padding: 15px;
+  text-align: left;
+  font-size: 1.1em;
+}
+
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  color: #444;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover {
+  background-color: #e6fffa;
+}
+
+/* 超連結樣式 */
+a {
+  color: #5b8fd1; /* 修改：主色調統一 */
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+a:hover {
+  color: #7bc5d8; /* Hover 時亮一點的藍綠 */
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #7bc5d8;
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* 圖片樣式 */
+.profile-img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 20px auto;
+  border: 5px solid #b0c6e8;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+}
