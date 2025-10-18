@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do List</title>
+  <style>
+    body {
+      font-family: "Noto Sans TC", sans-serif;
+      background-color: #DEE2F7;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 60px;
+    }
+
+    .todo-container {
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+      width: 380px;
+      padding: 28px;
+      border: 3px solid #c9c9ee;
+    }
+
+    h1 {
+      text-align: center;
+      color: #7d80c7;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .input-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 10px 12px;
+      border: 2px solid #c9c9ee;
+      border-radius: 8px;
+      font-size: 16px;
+      background-color: #DEE2F7;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      outline: none;
+    }
+
+    input[type="text"]:focus {
+      border-color: #a2a6f2;
+      box-shadow: 0 0 6px rgba(162, 166, 242, 0.4);
+    }
+
+    button {
+      background-color: #a2a6f2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 16px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #7d80c7;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 22px;
+    }
+
+    li {
+      background-color: #f0effa;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-left: 6px solid #c9c9ee;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    li:hover {
+      transform: translateX(3px);
+    }
+
+    li.done {
+      text-decoration: line-through;
+      color: #888;
+      background-color: #D5BDEF;
+      border-left-color: #BC96E6;
+    }
+
+    .delete-btn {
+      background-color: #fa6c6c;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      padding: 5px 9px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.2s;
+    }
+
+    .delete-btn:hover {
+      background-color: #e74c3c;
+    }
+  </style>
+</head>
+<body>
+  <div class="todo-container">
+    <h1>To-Do List</h1>
+    <div class="input-group">
+      <input id="todoInput" type="text" placeholder="輸入待辦事項..." />
+      <button id="addBtn">新增</button>
+    </div>
+    <ul id="todoList"></ul>
+  </div>
+
+  <script>
+    const input = document.getElementById("todoInput");
+    const addBtn = document.getElementById("addBtn");
+    const list = document.getElementById("todoList");
+
+    addBtn.addEventListener("click", addTodo);
+
+    function addTodo() {
+      const text = input.value.trim();
+      if (text === "") return;
+
+      const li = document.createElement("li");
+      li.textContent = text;
+
+      li.addEventListener("click", () => {
+        li.classList.toggle("done");
+      });
+
+      const delBtn = document.createElement("button");
+      delBtn.textContent = "刪除";
+      delBtn.classList.add("delete-btn");
+      delBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        li.remove();
+      });
+
+      li.appendChild(delBtn);
+      list.appendChild(li);
+      input.value = "";
+    }
+  </script>
+</body>
+</html>
