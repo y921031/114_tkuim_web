@@ -1,265 +1,514 @@
 <!DOCTYPE html>
+
 <html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>黃俞媞｜我的作品集</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>黃俞媞｜作品集</title>
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-  <!-- 自訂樣式 -->
-  <style>
-    :root {
-      --primary-color: #82AEB1;
-      --secondary-color: #AEE5D8;
-      --accent-color: #B1DDF1;
-      --light-bg: #d4f5f1;
-      --soft-bg: #D1F0E9;
-      --neutral: #c3dbc5;
-    }
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
 
-    body {
-      font-family: "Noto Sans TC", sans-serif;
-      background-color: var(--light-bg);
-      color: #333;
-    }
+<!-- 自訂樣式 -->
+<style>
+  :root {
+    --primary-color: #82aeb1;
+    --secondary-color: #aee5d8;
+    --accent-color: #b1ddf1;
+    --light-bg: #d4f5f1;
+    --soft-bg: #d1f0e9;
+  }
 
-    /* Navbar */
-    .navbar {
-      background-color: var(--primary-color);
-    }
-    .navbar-brand {
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
+  body {
+    font-family: "Noto Sans TC", sans-serif;
+    background-color: var(--light-bg);
+    color: #333;
+  }
 
-    /* Hero */
-    #home {
-      background-color: var(--secondary-color);
-      color: #333;
-    }
+  /* Navbar */
+  .navbar {
+    background-color: var(--primary-color);
+  }
 
-    /* Section 背景交錯 */
-    #about {
-      background-color: var(--soft-bg);
-    }
-    #skills {
-      background-color: var(--light-bg);
-    }
-    #portfolio {
-      background-color: var(--soft-bg);
-    }
-    #contact {
-      background-color: var(--light-bg);
-    }
+  .navbar-brand {
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
 
-    /* Buttons */
-    .btn-primary {
-      background-color: var(--primary-color);
-      border-color: var(--primary-color);
-    }
-    .btn-primary:hover {
-      background-color: var(--accent-color);
-      border-color: var(--accent-color);
-      color: #333;
-    }
+  /* Hero */
+  #home {
+    background-color: var(--secondary-color);
+    color: #333;
+  }
 
-    /* Cards */
-    .card {
-      border: none;
-      border-radius: 1rem;
-      background-color: #DFF3E3;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-    }
+  /* Section 背景交錯 */
+  #about {
+    background-color: var(--soft-bg);
+  }
 
-    /* Footer */
-    footer {
-      background-color: var(--primary-color);
-    }
-    footer a {
-      color: #DFF3E3;
-      text-decoration: none;
-    }
-    footer a:hover {
-      color: var(--accent-color);
-    }
+  #skills {
+    background-color: var(--light-bg);
+  }
 
-    /* Section 標題 */
-    h2 {
-      color: var(--primary-color);
-      border-bottom: 3px solid var(--accent-color);
-      display: inline-block;
-      padding-bottom: 5px;
-    }
+  #portfolio {
+    background-color: var(--soft-bg);
+  }
 
-    /* 關於我區塊微調 */
-    #about th {
-      color: var(--primary-color);
-    }
-    #about td {
-      color: #555;
-    }
-    #about p {
-      color: #444;
-    }
-  </style>
-</head>
+  #contact {
+    background-color: var(--light-bg);
+  }
 
-<body>
-  <!-- 導覽列 -->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">黃俞媞</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="#home">首頁</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">關於</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">技能</a></li>
-          <li class="nav-item"><a class="nav-link" href="#portfolio">作品</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">聯絡</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  /* Buttons */
+  .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
 
-  <!-- 首頁 -->
-  <section id="home" class="py-5 text-center">
-    <div class="container">
-      <h2 class="display-4 fw-bold">你好！我是黃俞媞～</h2>
-      <p class="lead mb-4">一位喜歡設計與程式的學生，喜歡用畫面與互動表達創意。</p>
-      <a href="#portfolio" class="btn btn-primary btn-lg me-2">查看作品</a>
-      <a href="#contact" class="btn btn-primary btn-lg me-2">聯絡我</a>
-    </div>
-  </section>
+  .btn-primary:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #333;
+  }
 
-  <!-- 關於我 -->
-  <section id="about" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-5">關於我</h2>
-      <div class="row align-items-center">
-        <div class="col-md-5 text-center mb-4 mb-md-0">
-          <img src="https://via.placeholder.com/280" class="img-fluid rounded-circle shadow-sm" alt="個人照片">
-        </div>
-        <div class="col-md-5">
-          <h4 class="fw-bold text-primary mb-3">基本資料</h4>
-          <table class="table table-borderless align-middle">
-            <tbody>
-              <tr><th scope="row">姓名：</th><td><strong>黃俞媞</strong></td></tr>
-              <tr><th scope="row">學校：</th><td>淡江大學 資訊管理學系</td></tr>
-              <tr><th scope="row">興趣：</th><td>旅遊、吃美食、追劇、聽音樂</td></tr>
-            </tbody>
-          </table>
+  /* Cards */
+  .card {
+    border: none;
+    border-radius: 1rem;
+    background-color: #dff3e3;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
 
-          <h4 class="fw-bold text-primary mt-4 mb-2">自我介紹</h4>
-          <p>我是一位對前端開發與設計感興趣的學生，喜歡結合色彩與互動，創造簡潔又有溫度的網頁。  
-          目前持續學習 HTML、CSS、JavaScript 與 UI/UX 設計，希望未來能參與更多實際專案，成長為能設計又能開發的全端創作者。</p>
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Section 標題 */
+  h2 {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--accent-color);
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+
+  /* Footer */
+  footer {
+    background-color: var(--primary-color);
+  }
+
+  footer a {
+    color: #dff3e3;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+
+  footer a:hover {
+    color: var(--accent-color);
+  }
+
+  .icon-bw {
+    filter: grayscale(100%);
+  }
+</style>
+
+  </head>
+
+  <body>
+    <!-- 導覽列 -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">黃俞媞</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="#home">首頁</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">關於</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills">技能</a></li>
+            <li class="nav-item"><a class="nav-link" href="#portfolio">作品</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">聯絡</a></li>
+          </ul>
         </div>
       </div>
+    </nav>
+
+<!-- 首頁 -->
+<section id="home" class="py-5 text-center">
+  <div class="container">
+    <h2 class="display-4 fw-bold">你好！我是黃俞媞～</h2>
+    <p class="lead mb-4">
+      一位喜歡設計與程式的學生<br />
+      喜歡用畫面與互動表達創意💡
+    </p>
+    <a href="#portfolio" class="btn btn-primary btn-lg me-2">查看作品</a>
+    <a href="#portfolio" class="btn btn-primary btn-lg me-2">聯絡我</a>
+  </div>
+</section>
+
+<!-- 關於我 -->
+<section id="about" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">關於我</h2>
+    <div class="row align-items-center">
+      <div class="col-md-5 text-center mb-4 mb-md-0">
+        <img src="images/IMG_0776.JPG" class="img-fluid rounded-circle shadow-sm" alt="個人照片" />
+      </div>
+      <div class="col-md-7">
+        <h4 class="fw-bold mb-3" style="color: var(--primary-color)">基本資料</h4>
+        <table class="table table-borderless align-middle">
+          <tbody>
+            <tr><th>姓名：</th><td><strong>黃俞媞</strong></td></tr>
+            <tr><th>學校：</th><td>淡江大學 資訊管理學系</td></tr>
+            <tr><th>興趣：</th><td>旅遊、聽音樂、研究作品、探索未知</td></tr>
+          </tbody>
+        </table>
+        <h4 class="fw-bold mt-4 mb-2" style="color: var(--primary-color)">自我介紹</h4>
+        <p>
+          我是一位對前端開發與設計感興趣的學生，喜歡結合色彩與互動，創造簡潔又有溫度的網頁。<br />
+          目前持續學習 HTML、CSS、JavaScript 與 UI/UX 設計，並嘗試實作各類專案，包括互動式代辦清單、學生資料管理系統，以及法律AI諮詢系統。<br />
+          希望未來能成為一名能設計又能開發的全端創作者，打造更有溫度的數位體驗。
+        </p>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- 技能展示 -->
-  <section id="skills" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-5">我的技能</h2>
-      <div class="row g-4">
+    <!-- 技能展示 -->
+    <section id="skills" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">我的技能</h2>
+        <div class="row g-4 justify-content-center">
+          <!-- HTML -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card text-center h-100">
+              <div class="card-body">
+                <img
+                  src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/filetype-html.svg"
+                  alt="HTML Icon"
+                  width="50"
+                  class="mb-3 icon-bw"
+                />
+                <h5 class="card-title">HTML</h5>
+                <p class="card-text">
+                  熟悉 HTML 結構與語意標籤，<br />能建立網頁骨架。
+                </p>
+              </div>
+            </div>
+          </div>
 
-        <div class="col-md-4">
-          <div class="card text-center h-100">
-            <div class="card-body">
-              <h5 class="card-title">HTML / CSS / Bootstrap</h5>
-              <p class="card-text">能設計版面並打造響應式網站，掌握排版與配色概念。</p>
+          <!-- CSS -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card text-center h-100">
+              <div class="card-body">
+                <img
+                  src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/filetype-css.svg"
+                  alt="CSS Icon"
+                  width="50"
+                  class="mb-3 icon-bw"
+                />
+                <h5 class="card-title">CSS</h5>
+                <p class="card-text">
+                  掌握排版、配色與動畫效果，<br />設計美觀網頁。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bootstrap -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card text-center h-100">
+              <div class="card-body">
+                <img
+                  src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/bootstrap.svg"
+                  alt="Bootstrap Icon"
+                  width="50"
+                  class="mb-3 icon-bw"
+                />
+                <h5 class="card-title">Bootstrap</h5>
+                <p class="card-text">
+                  熟悉響應式網頁設計與元件使用，<br />快速布局頁面。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- JavaScript -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card text-center h-100">
+              <div class="card-body">
+                <img
+                  src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/terminal.svg"
+                  alt="JS Icon"
+                  width="50"
+                  class="mb-3 icon-bw"
+                />
+                <h5 class="card-title">JavaScript</h5>
+                <p class="card-text">
+                  能操作 DOM、事件與簡單動畫，<br />增加互動功能。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- MySQL -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card text-center h-100">
+              <div class="card-body">
+                <img
+                  src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/database.svg"
+                  alt="MySQL Icon"
+                  width="50"
+                  class="mb-3 icon-bw"
+                />
+                <h5 class="card-title">MySQL</h5>
+                <p class="card-text">
+                  能撰寫基礎 SQL 指令，<br />管理與存取資料。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- InfinityFree -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card text-center h-100">
+              <div class="card-body">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/888/888879.png"
+                  alt="InfinityFree Icon"
+                  width="50"
+                  class="mb-3 icon-bw"
+                />
+                <h5 class="card-title">InfinityFree</h5>
+                <p class="card-text">
+                  能自己架設網站，<br />操作免費空間與上傳網頁檔案。
+                </p>
+              </div>
             </div>
           </div>
         </div>
-
-        <div class="col-md-4">
-          <div class="card text-center h-100">
-            <div class="card-body">
-              <h5 class="card-title">JavaScript</h5>
-              <p class="card-text">具備基本互動功能開發能力，能操作 DOM、事件及簡易動畫效果。</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card text-center h-100">
-            <div class="card-body">
-              <h5 class="card-title">MySQL</h5>
-              <p class="card-text">能撰寫基礎 SQL 指令進行資料存取與管理。</p>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 作品集 -->
-  <section id="portfolio" class="py-5">
-    <div class="container text-center">
-      <h2 class="mb-4">作品集</h2>
-  <!-- 作品集卡片範例 -->
-<div class="col-lg-4 col-md-6">
-  <div class="card h-100">
-    <img src="https://via.placeholder.com/600x400" class="card-img-top" alt="學生資料管理系統">
-    <div class="card-body">
-      <h5 class="card-title">學生資料管理系統</h5>
-      <p class="card-text">使用 MySQL + PHP + 前端表單，能新增、修改、刪除學生資料。</p>
-      <a href="https://yustudentsystem.page.gd/index.php" class="btn btn-primary" target="_blank">查看詳情</a>
+    <!-- 作品集 -->
+    <section id="portfolio" class="py-5" style="background-color: var(--light-bg);">
+      <div class="container">
+        <h2 class="text-center mb-5">作品集</h2>
+        <div class="row g-4 justify-content-center">
+          <!-- 左邊：To-Do List -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+              <img src="images/todo-thumbnail.png" class="card-img-top" alt="To-Do List網頁縮圖">
+              <div class="card-body text-center">
+                <h5 class="card-title">To-Do List</h5>
+                <p class="card-text">使用 HTML、CSS、JavaScript<br>製作的互動式代辦事項清單。</p>
+                <a href="https://yutodolist.gamer.gd/" class="btn btn-primary" target="_blank">查看詳情</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 中間：學生資料管理系統 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+              <img src="images/student-thumbnail.png" class="card-img-top" alt="學生資料管理系統網頁縮圖">
+              <div class="card-body text-center">
+                <h5 class="card-title">學生資料管理系統</h5>
+                <p class="card-text">使用 MySQL + PHP + 前端表單<br>能新增、修改、刪除學生資料。</p>
+                <a href="https://yustudentsystem.page.gd/index.php" class="btn btn-primary" target="_blank">查看詳情</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 右邊：Legal AI -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+              <img src="images/legalAI.png" class="card-img-top" alt="LegalAI網頁縮圖">
+              <div class="card-body text-center">
+                <h5 class="card-title">法律AI系統(前端)</h5>
+                <p class="card-text">
+                  專注於使用者互動設計，<br>
+                  包含對話框、FAQ 快速選項、輸入區與訊息回饋。<br>
+                  利用 React 與 Tailwind CSS 打造直覺化聊天體驗，<br>
+                  讓使用者能方便輸入問題並即時看到回覆。
+                </p>
+                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#legalAIModal">查看詳情</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <!-- Modal -->
+<div class="modal fade" id="legalAIModal" tabindex="-1" aria-labelledby="legalAIModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:#7373B9; color:white;">
+        <h5 class="modal-title" id="legalAIModalLabel">法律AI前端展示</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="關閉"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container py-3">
+          <div class="row gx-3">
+            <!-- 左側 FAQ / 連結 -->
+            <aside class="col-md-3">
+              <div class="card mb-3" style="background-color:#A6A6D2;color:black;border-radius:1rem;padding:1rem;">
+                <h5>常用連結</h5>
+                <ul class="list-unstyled">
+                  <li><a href="https://www.laf.org.tw/" target="_blank" style="color:#5151A2;text-decoration:underline;">法律扶助基金會</a></li>
+                  <li><a href="https://www.judicial.gov.tw/tw/cp-1429-73791-241d6-1.html" target="_blank" style="color:#5151A2;text-decoration:underline;">司法院服務</a></li>
+                  <li><a href="https://www.ris.gov.tw/app/portal" target="_blank" style="color:#5151A2;text-decoration:underline;">戶政事務所</a></li>
+                </ul>
+              </div>
+              <div class="card" style="background-color:#A6A6D2;color:black;border-radius:1rem;padding:1rem;">
+                <h5>常見問題</h5>
+                <ul class="list-unstyled" id="faq-list">
+                  <li class="faq-item" style="cursor:pointer;text-decoration:underline;">我能不能分到遺產？</li>
+                  <li class="faq-item" style="cursor:pointer;text-decoration:underline;">贈與會不會有稅？</li>
+                  <li class="faq-item" style="cursor:pointer;text-decoration:underline;">契約解除需要什麼條件？</li>
+                  <li class="faq-item" style="cursor:pointer;text-decoration:underline;">父母過世後房子怎麼分？</li>
+                  <li class="faq-item" style="cursor:pointer;text-decoration:underline;">遺囑和贈與有什麼差別？</li>
+                </ul>
+              </div>
+            </aside>
+
+            <!-- 中間聊天區 -->
+            <main class="col-md-6 d-flex flex-column">
+              <div style="background-color:#7373B9;color:white;padding:0.5rem;border-radius:0.5rem 0.5rem 0 0; display:flex;justify-content:space-between;align-items:center;">
+                <h5 class="mb-0">法律問題諮詢</h5>
+                <div>
+                  <button id="export-btn" class="btn btn-sm btn-dark">匯出紀錄</button>
+                  <button id="clear-btn" class="btn btn-sm btn-dark">清除對話</button>
+                </div>
+              </div>
+              <div class="chat-container" id="chat-container" style="display:flex;flex-direction:column;overflow-y:auto;height:320px;padding:10px;background-color:rgba(255,255,255,0.9);border-radius:0 0 0 0;">
+                <div class="chat-bubble ai" style="background-color:#D8D8EB;color:black;align-self:flex-start;padding:8px;border-radius:1rem;margin-bottom:5px;">
+                  您好，我是法律AI助手，請描述您的問題。<br><small>時間</small>
+                </div>
+              </div>
+              <div class="chat-input" style="display:flex;gap:5px;padding:10px;background-color:white;border-radius:0 0 0.5rem 0.5rem;border-top:1px solid #ccc;">
+                <input type="text" id="chat-input" placeholder="請輸入您的問題..." style="flex:1;padding:8px;border-radius:0.5rem;border:1px solid #ccc;">
+                <button id="send-btn" style="background-color:#5151A2;color:white;border:none;padding:5px 12px;border-radius:0.5rem;">送出</button>
+              </div>
+            </main>
+
+            <!-- 右側建議行動 / 程序步驟 -->
+            <aside class="col-md-3">
+              <div class="card mb-3" style="background-color:#A6A6D2;color:black;border-radius:1rem;padding:1rem;">
+                <h5>建議行動</h5>
+                <ul>
+                  <li>保存合約、收據與通訊紀錄</li>
+                  <li>蒐集相關證據（文件、照片、聊天紀錄）</li>
+                  <li>避免衝突，保持冷靜</li>
+                </ul>
+              </div>
+              <div class="card" style="background-color:#A6A6D2;color:black;border-radius:1rem;padding:1rem;">
+                <h5>程序步驟</h5>
+                <ol>
+                  <li>確認案情並整理相關文件</li>
+                  <li>蒐集證據（文件、照片、聊天紀錄）</li>
+                  <li>先嘗試協商或調解</li>
+                </ol>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-</div>
-  </section>
 
-  <!-- 聯絡表單 -->
-  <section id="contact" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-5">聯絡我</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-6">
-          <form>
-            <div class="mb-3">
-              <label for="name" class="form-label">姓名</label>
-              <input type="text" class="form-control" id="name" placeholder="請輸入姓名" required>
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="example@gmail.com" required>
-            </div>
-            <div class="mb-3">
-              <label for="subject" class="form-label">主旨</label>
-              <input type="text" class="form-control" id="subject" placeholder="聯絡主題" required>
-            </div>
-            <div class="mb-3">
-              <label for="message" class="form-label">訊息</label>
-              <textarea class="form-control" id="message" rows="4" placeholder="請輸入訊息..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">送出</button>
-          </form>
-        </div>
+<script>
+const chatContainer = document.getElementById('chat-container');
+const inputEl = document.getElementById('chat-input');
+const sendBtn = document.getElementById('send-btn');
+const clearBtn = document.getElementById('clear-btn');
+
+// 新增訊息
+function addMessage(who, text){
+  const bubble = document.createElement('div');
+  bubble.className = 'chat-bubble ' + (who==='user'?'user':'ai');
+  bubble.style.backgroundColor = who==='user'?'#A6A6D2':'#D8D8EB';
+  bubble.style.color = 'black';
+  bubble.style.alignSelf = who==='user'?'flex-end':'flex-start';
+  bubble.style.padding='8px';
+  bubble.style.borderRadius='1rem';
+  bubble.style.marginBottom='5px';
+  const time = new Date().toLocaleTimeString();
+  bubble.innerHTML = text + '<br><small>' + time + '</small>';
+  chatContainer.appendChild(bubble);
+  chatContainer.scrollTop = chatContainer.scrollHeight;
+}
+
+// 發送訊息
+sendBtn.addEventListener('click', ()=>{
+  const text = inputEl.value.trim();
+  if(!text) return;
+  addMessage('user', text);
+  inputEl.value='';
+  setTimeout(()=>{ addMessage('ai', `我已收到您的訊息：「${text}」，請稍候系統分析。`); },600);
+});
+
+// Enter 發送
+inputEl.addEventListener('keydown', e=>{
+  if(e.key==='Enter'){ e.preventDefault(); sendBtn.click(); }
+});
+
+// 清除訊息
+clearBtn.addEventListener('click', ()=>{
+  chatContainer.innerHTML='';
+  addMessage('ai','對話已清除，請重新描述您的問題。');
+});
+
+// FAQ 點擊
+document.querySelectorAll('.faq-item').forEach(li=>{
+  li.addEventListener('click', ()=>{
+    inputEl.value = li.innerText;
+    inputEl.focus();
+  });
+});
+</script>
+    </section>
+
+<!-- 聯絡表單 -->
+<section id="contact" class="py-5">
+  <div class="container" style="max-width: 800px">
+    <h2 class="text-center mb-5">聯絡我</h2>
+    <form>
+      <div class="mb-3">
+        <label for="name" class="form-label">姓名</label>
+        <input type="text" class="form-control" id="name" placeholder="請輸入姓名" required />
       </div>
-    </div>
-  </section>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="example@gmail.com" required />
+      </div>
+      <div class="mb-3">
+        <label for="subject" class="form-label">主旨</label>
+        <input type="text" class="form-control" id="subject" placeholder="聯絡主題" required />
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">訊息</label>
+        <textarea class="form-control" id="message" rows="4" placeholder="請輸入訊息..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">送出</button>
+    </form>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="text-white text-center py-4">
-    <a href="https://github.com/y921031" target="_blank">前往我的 GitHub</a>
-    <p class="mb-2">© 2025 黃俞媞 | All Rights Reserved</p>
-  </footer>
+<!-- 頁尾 -->
+<footer class="text-center py-4">
+  <div class="mb-2">
+    <a href="https://github.com/y921031" target="_blank"><i class="bi bi-github" style="font-size: 1.3rem"></i> GitHub</a>
+    <a href="https://www.instagram.com/__lazzzy_bee/" target="_blank"><i class="bi bi-instagram" style="font-size: 1.3rem"></i> Instagram</a>
+    <a href="https://www.threads.net/@__lazzzy_bee" target="_blank"><i class="bi bi-threads" style="font-size: 1.3rem"></i> Threads</a>
+  </div>
+  <p class="mb-0">© 2025 黃俞媞 | All Rights Reserved</p>
+</footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  </body>
 </html>
