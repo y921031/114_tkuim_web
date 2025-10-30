@@ -5,6 +5,9 @@ const form = document.getElementById('full-form');
 const submitBtn = document.getElementById('submitBtn');
 const resetBtn = document.getElementById('resetBtn');
 
+// 新增：取得隱私條款 checkbox 元素
+const privacyCheckbox = document.getElementById('privacyCheck');
+
 function validateAllInputs(formElement) {
   let firstInvalid = null;
   const controls = Array.from(formElement.querySelectorAll('input, select, textarea'));
@@ -53,3 +56,12 @@ form.addEventListener('input', (event) => {
     target.classList.remove('is-invalid');
   }
 });
+
+// 新增功能：當使用者勾選「我已閱讀隱私條款」時彈出提示視窗
+if (privacyCheckbox) {
+  privacyCheckbox.addEventListener('change', () => {
+    if (privacyCheckbox.checked) {
+      alert('這是隱私條款');
+    }
+  });
+}

@@ -25,22 +25,28 @@
           <div id="topic-feedback" class="invalid-feedback">請選擇一個主題。</div>
         </div>
       </div>
+
       <div class="mt-3">
         <label class="form-label" for="content">留言內容</label>
         <textarea id="content" name="content" class="form-control" rows="4" minlength="20" required aria-describedby="content-feedback"></textarea>
         <div id="content-feedback" class="invalid-feedback">請輸入至少 20 字的留言。</div>
       </div>
+
+      <!-- 修改：checkbox 加上 id="privacyCheck" -->
       <div class="form-check mt-3">
-        <input id="agree" class="form-check-input" type="checkbox" required>
-        <label class="form-check-label" for="agree">我已閱讀並同意隱私權條款</label>
+        <input id="privacyCheck" class="form-check-input" type="checkbox" required>
+        <label class="form-check-label" for="privacyCheck">我已閱讀並同意隱私權條款</label>
         <div class="invalid-feedback">須同意條款才能送出。</div>
       </div>
+
       <div class="mt-4">
         <button id="submitBtn" class="btn btn-primary" type="submit">送出</button>
         <button id="resetBtn" class="btn btn-outline-secondary ms-2" type="button">清除</button>
       </div>
     </form>
   </div>
+
+  <!-- 連結外部 JS -->
   <script src="example5_script.js"></script>
 </body>
 </html>
