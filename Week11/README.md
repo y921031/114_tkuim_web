@@ -33,36 +33,45 @@ ALLOWED_ORIGIN=http://localhost:5173
 ### 3. CRUD API 測試結果
 
 #### 0 狀態檢查
-`GET http://localhost:3001/health`
 ```markdown
 GET http://localhost:3001/health
 ```
 
 #### 1 建立報名 (Create) - 獲取 ID
+```markdown
 POST http://localhost:3001/api/signup
 Content-Type: application/json
 
 { "name": "Lab Test User", "email": "test-user-{{$randomInt}}@example.com", "phone": "0988777666", "interests": ["全端"] }
+```
 
 #### 2 Email 唯一性驗證 (409 Conflict)
 ##### 請執行兩次，第二次應返回 409
+```markdown
 POST http://localhost:3001/api/signup
 Content-Type: application/json
 
 { "name": "重複測試", "email": "duplicate-test@example.com", "phone": "0911000111" }
+```
 
 #### 3 查看清單 - 分頁功能驗證
-`GET http://localhost:3001/api/signup?page=2&limit=2`
+```markdown
+GET http://localhost:3001/api/signup?page=2&limit=2
+```
 
 
 #### 4 更新報名資料 (Update)
+```markdown
 PATCH http://localhost:3001/api/signup/
 Content-Type: application/json
 
 { "phone": "0900000000", "status": "confirmed" }
+```
 
 #### 5 刪除報名資料 (Delete)
+```markdown
 DELETE http://localhost:3001/api/signup/[YOUR_ID_HERE]
+```
 
 ---
 
