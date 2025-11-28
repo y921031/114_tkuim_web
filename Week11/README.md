@@ -37,11 +37,11 @@
 PORT=3001
 MONGODB_URI=mongodb://week11-user:week11-pass@localhost:27017/week11?authSource=week11
 ALLOWED_ORIGIN=http://localhost:5173
+ˋˋˋ
 
-| 變數 | 用途說明 | 
-| PORT | Express伺服器運行的端口 | 
-| MONGODB_URI | 資料庫連線字串，包含帳號 week11-user和密碼week11-pass | 
-| ALLOWED_ORIGIN | CORS設置，允許此前端網域訪問 API | 
+PORT：Express伺服器運行的端口
+MONGODB_URI：資料庫連線字串，包含帳號 week11-user和密碼week11-pass 
+ALLOWED_ORIGIN：CORS設置，允許此前端網域訪問 API
 
 
 ## 專案成果展示與 API 驗證
