@@ -18,6 +18,14 @@ router.post('/', async (req, res, next) => {
     const id = await createParticipant({ name, email, phone });
     res.status(201).json({ id });
   } catch (error) {
+        console.error('--- 發生錯誤，追蹤如下 ---');
+        console.error(error);
+        
+        if (error.code === 11000 && error.keyPattern && error.keyPattern.email) {
+            return res.status(409).json({
+                error: '該 Email 已被註冊，請勿重複報名。'
+            });
+        }
     next(error);
   }
 });

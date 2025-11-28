@@ -1,19 +1,43 @@
-### 狀態檢查
+### 0. 狀態檢查 (Health Check)
 GET http://localhost:3001/health
 
-### 建立報名
+###
+# 1. 建立報名 (Create) - 獲取 ID
 POST http://localhost:3001/api/signup
 Content-Type: application/json
 
 {
-  "name": "REST Client",
-  "email": "rest@example.com",
+  "name": "手動ID測試",
+  "email": "manual-id-{{$randomInt}}@example.com", 
   "phone": "0988777666",
-  "password": "restrest",
-  "confirmPassword": "restrest",
-  "interests": ["全端"],
-  "terms": true
+  "interests": ["後端"]
 }
 
-### 查看清單
-GET http://localhost:3001/api/signup
+###
+# 2. 查看清單 - 分頁測試
+GET http://localhost:3001/api/signup?page=2&limit=2
+
+###
+# 3. 更新報名資料 (Update)
+PATCH http://localhost:3001/api/signup/692a0ed52f953154fc820bfe
+Content-Type: application/json
+
+{
+  "phone": "0900000000",
+  "status": "confirmed"
+}
+
+###
+# 4. 刪除報名資料 (Delete)
+DELETE http://localhost:3001/api/signup/692a0ed52f953154fc820bfe
+
+###
+# 5. 測試 Email 重複 (Lab 必做任務)
+POST http://localhost:3001/api/signup
+Content-Type: application/json
+
+{
+  "name": "重複 Email 測試",
+  "email": "duplicate-test@example.com", 
+  "phone": "0911000111"
+}

@@ -8,6 +8,10 @@ const app = express();
 app.use(cors({ origin: process.env.ALLOWED_ORIGIN }));
 app.use(express.json());
 
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok', service: 'Week11 Express API' }); 
+});
+
 app.use('/api/signup', signupRouter);
 
 app.use((req, res) => {
