@@ -4,7 +4,8 @@ import {
   createParticipant,
   listParticipants,
   updateParticipant,
-  deleteParticipant
+  deleteParticipant,
+  countParticipants 
 } from '../repositories/participants.js';
 
 const router = express.Router();
@@ -30,10 +31,30 @@ router.post('/', async (req, res, next) => {
   }
 });
 
+// 修正 GET 路由以實作分頁 (GET /api/signup?page=x&limit=y)
 router.get('/', async (req, res, next) => {
   try {
-    const participants = await listParticipants();
-    res.json({ items: participants, total: participants.length });
+    // 1. 取得並解析 page 和 limit 參數，設定預設值
+    // page 預設第 1 頁，limit 預設 10 筆
+    const page = parseInt(req.query.page) || 1; 
+    const limit = parseInt(req.query.limit) || 10; 
+
+    // 2. 計算 skip (跳過筆數): skip = (page - 1) * limit
+    const skip = (page - 1) * limit;
+
+    // 3. 獲取總筆數 (用於前端顯示總頁數)
+    const totalItems = await countParticipants(); 
+
+    // 4. 調用 repository 函式，傳入分頁參數 (skip/limit)
+    const participants = await listParticipants(skip, limit); 
+    
+    // 5. 返回包含分頁資訊的數據
+    res.json({ 
+      items: participants, 
+      total: totalItems,
+      page: page,
+      limit: limit
+    });
   } catch (error) {
     next(error);
   }

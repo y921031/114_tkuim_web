@@ -13,8 +13,20 @@ export async function createParticipant(data) {
   return result.insertedId;
 }
 
-export function listParticipants() {
-  return collection().find().sort({ createdAt: -1 }).toArray();
+// 1. 修正 listParticipants 函式以實作分頁 (skip/limit)
+// 預設 skip=0, limit=10
+export function listParticipants(skip = 0, limit = 10) {
+  return collection()
+    .find()
+    .sort({ createdAt: -1 })
+    .skip(skip)   // <-- MongoDB/Mongoose 的 skip 實作
+    .limit(limit) // <-- MongoDB/Mongoose 的 limit 實作
+    .toArray();
+}
+
+// 2. 新增 countParticipants 函式 (用於計算總筆數)
+export function countParticipants() {
+  return collection().countDocuments({});
 }
 
 export async function updateParticipant(id, patch) {

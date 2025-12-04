@@ -1,4 +1,9 @@
 db.participants.createIndex({ email: 1 }, { unique: true })
+use week11
+week11> db.participants.createIndex({ email: 1 }, { unique: true })
+use week11
+test> use week11
+db.participants.createIndex({ email: 1 }, { unique: true })
 exit
 db.participants.getIndexes()
 db.participants.createIndex({ email: 1 }, { unique: true })
