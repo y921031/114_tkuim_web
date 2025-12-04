@@ -1,4 +1,4 @@
-# Week 11 Lab：MERN Stack - Express API 實戰與 MongoDB CRUD
+# Week 11 Lab：Express API 實戰與 MongoDB CRUD
 
 本專案實作了一個 Express.js 後端 API，搭配 MongoDB 進行報名系統的 CRUD 操作，並符合分頁與 Email 唯一性檢查等進階要求。
 
