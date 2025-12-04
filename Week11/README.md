@@ -2,6 +2,12 @@
 
 本專案實作了一個 Express.js 後端 API，搭配 MongoDB 進行報名系統的 CRUD 操作，並符合分頁與 Email 唯一性檢查等進階要求。
 
+## 環境需求
+- Node.js 18+
+- Docker / Docker Compose
+- VS Code REST Client（API 測試用）
+
+
 ## 專案成果展示與 API 驗證
 
 ### 1. 服務啟動狀態
@@ -25,6 +31,7 @@ MONGODB_URI=mongodb://week11-user:week11-pass@localhost:27017/week11?authSource=
 ALLOWED_ORIGIN=http://localhost:5173
 ```
 
+---
 
 ### 3. CRUD API 測試腳本
 
@@ -80,11 +87,15 @@ DELETE http://localhost:3001/api/signup/[YOUR_ID_HERE]
 #### Mongo Shell 唯一索引驗證 (Lab 要求)
 證明 participants 集合已成功建立 Email 唯一索引。
 
-目的	指令範例
-進入 Shell	docker exec -it week11-mongo mongosh -u week11-user -p week11-pass --authenticationDatabase week11
-建立 Email 唯一索引	db.participants.createIndex({ email: 1 }, { unique: true })
+	
+| 目的 | 指令範例 |
+| --- | --- |
+| 進入 Shell | docker exec -it week11-mongo mongosh -u week11-user -p week11-pass --authenticationDatabase week11 |
+| 建立 Email 唯一索引 | db.participants.createIndex({ email: 1 }, { unique: true }) |
 
 截圖： [貼入 db.participants.getIndexes() 顯示 email_1 唯一索引的截圖]
+
+---
 
 ### 6. 常見問題與除錯 (FAQ)
 | 問題 | 解決方式 |

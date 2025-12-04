@@ -1,3 +1,4 @@
+db.participants.createIndex({ email: 1 }, { unique: true })
 exit
 db.participants.getIndexes()
 db.participants.createIndex({ email: 1 }, { unique: true })
