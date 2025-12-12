@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 12 - 報名資料管理</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; max-width: 800px; margin: 0 auto; }
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+    .logout-btn { background-color: #dc3545; color: white; border: none; padding: 5px 15px; border-radius: 4px; cursor: pointer; }
+    
+    /* 表單區塊 */
+    .form-section { background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+    .form-group { margin-bottom: 10px; display: flex; gap: 10px; }
+    input { padding: 8px; border: 1px solid #ddd; border-radius: 4px; flex: 1; }
+    
+    /* 表格區塊 */
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+    th { background-color: #f1f1f1; }
+    .delete-btn { color: red; cursor: pointer; border: 1px solid red; background: white; padding: 2px 8px; border-radius: 4px; }
+    .delete-btn:hover { background: red; color: white; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>報名資料儀表板</h1>
+    <div>
+      <span id="user-info"></span>
+      <button id="logout-btn" class="logout-btn">登出</button>
+    </div>
+  </header>
+
+  <section class="form-section">
+    <h3>新增報名資料</h3>
+    <form id="create-form">
+      <div class="form-group">
+        <input type="text" id="name" placeholder="姓名" required>
+        <input type="email" id="contact-email" placeholder="聯絡 Email" required>
+        <input type="tel" id="phone" placeholder="電話" required>
+      </div>
+      <button type="submit" style="background-color: #28a745; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer;">新增資料</button>
+    </form>
+  </section>
+
+  <section>
+    <h3>資料列表</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>姓名</th>
+          <th>Email</th>
+          <th>電話</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody id="data-table-body">
+        </tbody>
+    </table>
+  </section>
+
+  <script src="./js/signup_form.js"></script>
+
+  <script>
+    // 簡單的登出邏輯 (可以直接寫在這裡或移到 signup_form.js)
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      window.location.href = 'index.html';
+    });
+
+    // 顯示目前登入者 (非必要，但有比較好)
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user) {
+      document.getElementById('user-info').textContent = `Hi, ${user.role}`;
+    }
+  </script>
+</body>
+</html>
